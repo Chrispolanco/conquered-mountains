@@ -11,7 +11,7 @@ class MountainsController < ApplicationController
 
     end 
 
-    def crete
+    def create
 
     end 
 
