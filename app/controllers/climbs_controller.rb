@@ -12,7 +12,8 @@ class ClimbsController < ApplicationController
     end 
 
     def create
-
+        @climb = Climb.create(climb_params)
+        redirect_to climb_path(@climb) 
     end 
 
     def edit 
@@ -29,7 +30,7 @@ class ClimbsController < ApplicationController
 
     private 
 
-        def climber_params
+        def climb_params
             params.require(:climbs).permit(:completed, :date_time_started, :date_time_finished, :duration, :climber_id, :mountain_id)
         end 
     

@@ -14,8 +14,8 @@ class MountainsController < ApplicationController
     end 
 
     def create
-        Mountain.create(mountain_params)
-        redirect_to mountains_path 
+        @mountain = Mountain.create(mountain_params)
+        redirect_to mountain_path (@mountain)
     end 
 
     def edit 

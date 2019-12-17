@@ -14,8 +14,8 @@ class ClimbersController < ApplicationController
     end 
 
     def create
-        Climber.create(climber_params)
-        redirect_to climbers_path 
+        @climber = Climber.create(climber_params)
+        redirect_to climber_path(@climber) 
     end 
 
     def edit 
