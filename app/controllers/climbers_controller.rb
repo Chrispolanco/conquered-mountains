@@ -14,7 +14,8 @@ class ClimbersController < ApplicationController
     end 
 
     def create
-
+        Climber.create(climber_params)
+        redirect_to climbers_path 
     end 
 
     def edit 
@@ -28,7 +29,7 @@ class ClimbersController < ApplicationController
     private 
 
         def climber_params
-            params.require(:climber).permit(:username, :password_digest, :email, :name))
+            params.require(:climber).permit(:username, :password_digest, :email, :name)
         end 
 
         def set_climber

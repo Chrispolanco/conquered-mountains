@@ -14,7 +14,8 @@ class MountainsController < ApplicationController
     end 
 
     def create
-
+        Mountain.create(mountain_params)
+        redirect_to mountains_path 
     end 
 
     def edit 
@@ -31,7 +32,7 @@ class MountainsController < ApplicationController
 
     private 
 
-        def climber_params
+        def mountain_params
             params.require(:mountains).permit(:mountain_name, :route, :difficulty_rating)
         end 
 
