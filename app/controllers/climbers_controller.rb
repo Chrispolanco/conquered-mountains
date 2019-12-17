@@ -2,7 +2,7 @@ class ClimbersController < ApplicationController
     before_action :set_climber, only: [:show, :edit, :update]
 
     def index 
-
+        @climbers = Climber.all 
     end 
 
     def show 
