@@ -1,0 +1,2 @@
+class HumanSpaceFlight < ApplicationRecord
+end
