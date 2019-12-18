@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  resources :climbs
-  resources :climbers, only: [:index, :new, :create, :show, :edit, :update] do 
-    resources :mountains, only: [:index, :new, :create, :show, :edit, :update]
+  resources :users
+  resources :astronauts, only: [:index, :new, :create, :show, :edit, :update] do 
+    resources :missions, only: [:index, :new, :create, :show, :edit]
   end 
-  resources :mountains, only: [:index, :new, :create, :show, :edit, :update]  
+  resources :human_space_flights, only: [:index, :new, :create, :show, :edit, :update] 
+  resources :missions, only: [:index, :new, :create, :show, :edit]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
