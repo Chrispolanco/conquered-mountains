@@ -1,2 +1,3 @@
-class Climber < ApplicationRecord
+class User < ApplicationRecord
+
 end

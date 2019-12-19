@@ -28,12 +28,12 @@ class MountainsController < ApplicationController
 
     private 
 
-        def human_space_flight_params
-            params.require(:human_space_flight).permit(:launch_sites, :duration, :maiden_flight, :last_flight, :description, :mission_id, :astronaut_id)
+        def mountain_params
+            params.require(:mountain).permit(:name, :route, :difficulty_rating)
         end 
 
-        def set_flight
-            @human_space_flight = Human_Space_Flight.find(params[:id])
+        def set_mountain
+            @mountain = Mountain.find(params[:id])
         end 
 
 end 
