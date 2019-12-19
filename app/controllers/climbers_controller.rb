@@ -33,7 +33,7 @@ class ClimbersController < ApplicationController
     private 
 
         def climber_params
-            params.require(:climber).permit(:name, :age, :freeclimb)
+            params.require(:climber).permit(:name, :age, :experience)
         end 
 
         def set_climber
