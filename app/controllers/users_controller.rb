@@ -24,7 +24,8 @@ class UsersController < ApplicationController
     end 
 
     def update 
-
+        @user.update(user_params)
+        redirect_to user_path(@user)
     end 
 
     def destory

@@ -1,0 +1,16 @@
+<%= form_for @climb do |f| %> 
+
+    <%= f.label 'Date & Time Started' %><br>
+    <%= f.datetime_select :date_time_started %><br> 
+
+    <%= f.label 'Date & Time Finished' %><br>
+    <%= f.datetime_select :date_time_completed %><br> 
+
+    <%= f.label 'Duration' %><br>
+    <%= f.time_field :duration %><br> 
+
+    <%= f.submit "Submit Climb" %>
+
+<% end %> 
+
+

@@ -1,5 +1,5 @@
 class ClimbersController < ApplicationController
-    before_action :set_climber, only: [:show, :edit, :update, :destroy]
+    before_action :set_climber, only: [:show, :edit, :update]
 
     def index 
         @Climbers = Climber.all 
@@ -23,12 +23,9 @@ class ClimbersController < ApplicationController
     end 
 
     def update 
-
+        @climber.update(climber_params)
+        redirect_to climber_path(@climber)
     end
-    
-    def destroy
-
-    end 
 
     private 
 

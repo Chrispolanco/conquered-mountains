@@ -24,7 +24,8 @@ class ClimbsController < ApplicationController
     end 
 
     def update 
-
+        @climb.update(climb_params)
+        redirect_to climb_path(@climb)
     end 
 
     private 
