@@ -1,8 +1,8 @@
-class HumanSpaceFlightsController < ApplicationController
-    before_action :set_flight, only: [:show, :edit, :update, :destroy]
+class MountainsController < ApplicationController
+    before_action :set_mountain, only: [:show, :edit, :update]
 
     def index 
-        @human_space_flight = Human_Space_Flight.all
+        @mountains = Mountain.all
     end 
 
     def show 
@@ -14,8 +14,8 @@ class HumanSpaceFlightsController < ApplicationController
     end 
 
     def create
-        @human_space_flight = Human_Space_Flights.create(human_space_flight_params)
-        redirect_to human_space_fligh_path (@human_space_flight)
+        @mountain = Mountain.create(mountain_params)
+        redirect_to mountain_path (@mountain)
     end 
 
     def edit 
@@ -23,10 +23,6 @@ class HumanSpaceFlightsController < ApplicationController
     end 
 
     def update 
-
-    end 
-
-    def destroy 
 
     end 
 
