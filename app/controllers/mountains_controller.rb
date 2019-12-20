@@ -10,12 +10,16 @@ class MountainsController < ApplicationController
     end
 
     def new 
-
+        @mountain = Mountain.new
     end 
 
     def create
         @mountain = Mountain.create(mountain_params)
-        redirect_to mountain_path (@mountain)
+            if @mountain.save
+                redirect_to mountain_path (@mountain)
+            else 
+                render :new
+            end 
     end 
 
     def edit 

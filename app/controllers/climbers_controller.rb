@@ -10,12 +10,16 @@ class ClimbersController < ApplicationController
     end
 
     def new 
-
+        @climber = Climber.new
     end 
 
     def create
         @climber = Climber.create(climber_params)
-        redirect_to climber_path(@climber) 
+            if @climber.save 
+                redirect_to climber_path(@climber) 
+            else 
+                render :new
+            end 
     end 
 
     def edit 

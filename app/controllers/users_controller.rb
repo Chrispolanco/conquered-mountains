@@ -11,12 +11,15 @@ class UsersController < ApplicationController
     end
 
     def new 
-
+        @user = User.new
     end 
 
     def create
         @user = User.create(user_params)
-        redirect_to user_path(@user) 
+        if @user.save 
+            redirect_to user_path(@user) 
+        else 
+            render :new
     end 
 
     def edit 
@@ -29,7 +32,7 @@ class UsersController < ApplicationController
     end 
 
     def destory
-
+        redirect_to users_path 
     end 
 
     private 

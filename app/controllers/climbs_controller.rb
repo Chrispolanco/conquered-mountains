@@ -16,7 +16,11 @@ class ClimbsController < ApplicationController
 
     def create
         @climb = Climb.create(climb_params)
-        redirect_to climb_path(@climb) 
+        if @climb.save
+            redirect_to climb_path(@climb) 
+        else 
+            render :new 
+        end 
     end 
 
     def edit 
@@ -24,8 +28,7 @@ class ClimbsController < ApplicationController
     end 
 
     def update 
-        @climb.update(climb_params)
-        redirect_to climb_path(@climb)
+
     end 
 
     private 
