@@ -28,7 +28,11 @@ class ClimbsController < ApplicationController
     end 
 
     def update 
-
+        if @climb && @climb.update(climber_params)
+            redirect_to climb_path(@climb)
+        else
+            render :edit 
+        end 
     end 
 
     private 
