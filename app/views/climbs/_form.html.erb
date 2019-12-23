@@ -1,4 +1,19 @@
 <%= form_for @climb do |f| %> 
+    <% if @climb.errors.any? %>
+        <div id="error_explanation">
+            <h2>
+                <%= pluralize(@climb.errors.count, "error") %>
+                Prohibited this Climber from being saved into the database:
+            </h2>
+
+            <h2> There were some errors: </h2> 
+            <ul>
+                <% @climb.errors.full_messages.each do |message| %>
+                    <li> <%= message %> 
+                <% end %> 
+            </ul> 
+        </div> 
+    <% end %> 
 
     <%= f.label 'Date & Time Started' %><br>
     <%= f.datetime_select :date_time_started %><br> 

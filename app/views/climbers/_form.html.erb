@@ -1,4 +1,14 @@
 <%= form_for @climber do |f| %> 
+    <% if @climber.errors.any? %>
+        <div id="error_explanation">
+            <h2> There were some errors: </h2> 
+            <ul>
+                <% @climber.errors.full_messages.each do |message| %>
+                    <li> <%= message %> 
+                <% end %> 
+            </ul> 
+        </div> 
+    <% end %> 
     
     <%= f.label 'Name' %><br>
     <%= f.text_field :name %><br> 
