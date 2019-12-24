@@ -15,7 +15,7 @@ class MountainsController < ApplicationController
 
     def create
         @mountain = Mountain.create(mountain_params)
-            if @mountain.save
+            if @mountain && @mountain.save
                 redirect_to mountain_path (@mountain)
             else 
                 render :new
@@ -27,8 +27,11 @@ class MountainsController < ApplicationController
     end 
 
     def update 
-        @mountain.update(mountain_params)
-        redirect_to mountain_path(@mountain)
+        if @mountain && @mountain.update(mountain_params)
+            redirect_to mountain_path(@mountain)
+        else
+            render :edit 
+        end 
     end 
 
     private 

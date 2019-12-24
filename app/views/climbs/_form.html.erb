@@ -15,16 +15,24 @@
         </div> 
     <% end %> 
 
-    <%= f.label 'Date & Time Started' %><br>
-    <%= f.datetime_select :date_time_started %><br> 
+    <div class="field">
+        <%= f.label 'Date & Time Started' %><br>
+        <%= f.datetime_select :date_time_started %><br> 
+    </div> 
 
-    <%= f.label 'Date & Time Finished' %><br>
-    <%= f.datetime_select :date_time_completed %><br> 
+    <div class="field">
+        <%= f.label 'Date & Time Finished' %><br>
+        <%= f.datetime_select :date_time_completed %><br> 
+    </div> 
 
-    <%= f.label 'Duration' %><br>
-    <%= f.time_field :duration %><br> 
+    <div class="field">
+        <%= f.label 'Duration' %><br>
+        <%= f.time_field :duration %><br> 
+    </div> 
 
-    <%= f.submit "Submit Climb" %>
+    <div class="actions">
+        <%= f.submit "Submit Climb" %>
+    </div> 
 
 <% end %> 
 

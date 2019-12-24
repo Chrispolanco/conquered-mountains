@@ -9,21 +9,29 @@
             <h2> There were some errors: </h2> 
             <ul>
                 <% @mountain.errors.full_messages.each do |message| %>
-                    <li> <%= message %> 
+                    <li> <%= message %> </li>
                 <% end %> 
             </ul> 
         </div> 
     <% end %> 
     
-    <%= f.label 'Name' %><br>
-    <%= f.text_field :name %><br> 
+    <div class="field">
+        <%= f.label 'Name' %><br>
+        <%= f.text_field :name %><br> 
+    </div> 
 
-    <%= f.label 'Route' %><br>
-    <%= f.text_field :route %><br> 
+    <div class="field">
+        <%= f.label 'Route' %><br>
+        <%= f.text_field :route %><br> 
+    </div> 
 
-    <%= f.label 'Difficulty Score' %><br>
-    <%= f.text_field :difficulty_rating %><br> 
+    <div class="field">
+        <%= f.label 'Difficulty Score' %><br>
+        <%= f.text_field :difficulty_rating %><br> 
+    </div> 
 
-    <%= f.submit "Submit Mountain" %>
+    <div class="actions">
+        <%= f.submit "Submit Mountain" %>
+    </div> 
 
 <% end %> 

@@ -1,16 +1,43 @@
 <h3> New User Form </h3> 
 
     <%= form_for @user do |f| %> 
-    
-    <%= f.label 'username' %><br>
-    <%= f.text_field :username %><br> 
 
-    <%= f.label 'email' %><br>
-    <%= f.text_field :email %><br> 
+    <% if @user.errors.any? %>
+        <div id="error_explanation">
+            <h2>
+                <%= pluralize(@user.errors.count, "error") %>
+                Prohibited this Climber from being saved into the database:
+            </h2>
 
-    <%= f.label 'name' %><br>
-    <%= f.text_field :name %><br> 
+            <h2> There were some errors: </h2> 
+            <ul>
+                <% @user.errors.full_messages.each do |message| %>
+                    <li> <%= message %> </li>
+                <% end %> 
+            </ul> 
+        </div> 
+    <% end %> 
 
-    <%= f.submit "Submit Climber" %>
+    <div class="field">
+        <%= f.label 'username' %><br>
+        <%= f.text_field :username %><br> 
+    </div> 
+
+    <div class="field">
+        <%= f.label 'email' %><br>
+        <%= f.text_field :email %><br> 
+    </div> 
+
+    <div class="field">
+        <%= f.label 'name' %><br>
+        <%= f.text_field :name %><br> 
+    </div> 
+
+    <div class="actions">
+        <%= f.submit "Submit Climber" %>
+    </div> 
 
 <% end %> 
+
+
+    

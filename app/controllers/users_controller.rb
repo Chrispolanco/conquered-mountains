@@ -16,7 +16,7 @@ class UsersController < ApplicationController
 
     def create
         @user = User.create(user_params)
-        if @user.save 
+        if @user && @user.save 
             redirect_to user_path(@user) 
         else 
             render :new
@@ -36,6 +36,7 @@ class UsersController < ApplicationController
     end 
 
     def destory
+        @user.destory
         redirect_to users_path 
     end 
 
