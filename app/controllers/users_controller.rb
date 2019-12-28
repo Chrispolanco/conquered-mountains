@@ -37,6 +37,7 @@ class UsersController < ApplicationController
 
     def destory
         @user.destory
+        flash[:notice] = "User Deleted" 
         redirect_to users_path 
     end 
 
