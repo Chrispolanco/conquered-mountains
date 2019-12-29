@@ -31,8 +31,14 @@
     </div>
 
     <div class="field"> 
-        <%= f.collection_select :mountain_name, Mountain.all, :name, :name %>
-        <% f.text_field :name %> 
+        <%= f.text_field :mountain_name, list: "mountains_autocomplete" %>
+        <datalist id="mountains_autocomplete">
+            <% Mountain.all.each do |mountain| %>
+                <option value="<%= mountain.name %>">
+            <% end %> 
+        </datalist> 
+        <textarea name="mountain[name]"></textarea>
+    </div> 
 
     <div class="actions">
         <%= f.submit "Submit Climber" %>
