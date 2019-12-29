@@ -37,12 +37,22 @@
                 <option value="<%= mountain.name %>">
             <% end %> 
         </datalist> 
-        <textarea name="mountain[name]"></textarea>
+        <textarea name="climber[mountain_name]"></textarea>
+    </div> 
+
+    <div class="field"> 
+        <%= f.collection_select :climber_id, Climber.all, :id, :name %> 
+        <input name="climber[climber_members][]" id="climber_member_1">
+        <input name="climber[climber_members][]" id="climber_member_2">
+        <input name="climber[climber_members][]" id="climber_member_3">
+        <input name="climber[climber_members][]" id="climber_member_4">
+        <input name="climber[climber_members][]" id="climber_member_5">
+        <input name="climber[climber_members][]" id="climber_member_6">
     </div> 
 
     <div class="actions">
         <%= f.submit "Submit Climber" %>
     </div> 
 
-
 <% end %>
+
