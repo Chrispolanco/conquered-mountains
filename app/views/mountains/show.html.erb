@@ -7,7 +7,7 @@
 <h3> <%= pluralize(@mountain.climbs.climbers.count, "Climbers" %> have climbed the Mountain" </h3> 
 
 <h3> Climbers to Climb Mountain </h3> 
-    <% mountain.climb.climbers each do |climber| %> 
-        <div> <%= link_to climber.name, climber_path(climber)%> 
+    <% mountain.climbs.each do |climb| %> 
+        <div> <%= link_to climb.climber.name, climber_path(climb.climber)%> 
         </div> 
     <% end %> 

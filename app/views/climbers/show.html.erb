@@ -3,3 +3,14 @@
 <h4> <%= @climber.experience %> </h4> 
 
 <%= link_to 'Edit', edit_climber_path(@climber) %>
+
+
+<h3> <%= @climber.name %> Has Climbed <%= pluralize(@climber.climbs.mountains.count), 'Mountains' %> </h3> 
+
+
+<h3> Mountains Climbed by Climber </h3>
+    <% climber.climbs.each do |climb| %>
+        <div> <%= link_to climb.mountain.name, mountain_path(climb.mountain)%>
+        </div> 
+    <% end %> 
+

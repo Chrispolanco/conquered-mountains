@@ -30,7 +30,18 @@
         <%= f.text_field :experience %><br> 
     </div>
 
-    <div class="field"> 
+        <div class="field">
+        <%= f.collection_check_boxes :mountain_ids, Mountain.all, :id, :name %>
+        <br> 
+        <br> 
+        <%= f.fields_for :mountains, climbers.mountains.build do |mountains_fields| %>
+            <%= mountains_fields :name "Name" %>
+            <%= mountains_fields.text_field :name %>
+        <% end %>
+        <br> 
+        <br> 
+
+<!--   <div class="field"> 
         <%= f.text_field :mountain_name, list: "mountains_autocomplete" %>
         <datalist id="mountains_autocomplete">
             <% Mountain.all.each do |mountain| %>
@@ -39,9 +50,9 @@
         </datalist> 
         <textarea name="climber[mountain_name]"></textarea>
     </div> 
-
+-->
     <div class="field"> 
-        <%= f.collection_select :climber_id, Climber.all, :id, :name %> 
+        <%= f.collection_check_boxes :climber_id, Climber.all, :id, :name %> 
         <input name="climber[climber_members][]" id="climber_member_1">
         <input name="climber[climber_members][]" id="climber_member_2">
         <input name="climber[climber_members][]" id="climber_member_3">
@@ -50,9 +61,39 @@
         <input name="climber[climber_members][]" id="climber_member_6">
     </div> 
 
+    <div class="field"> 
+        <%= f.fields_for :climbs do |climb| %>
+                <%= climb.label :name %>
+                <%= climb.text_field :name %><br>
+
+                <%= climb.label :duration %>
+                <%= climb.text_field :duration %><br>
+
+                <%= climb.label :date_started %>
+                <%= climb.text_field :date_started %><br>
+
+                <%= climb.label :date_completed %>
+                <%= climb.text_field :date_completed %><br>
+        <% end %>
+    </div> 
+
+
     <div class="actions">
         <%= f.submit "Submit Climber" %>
     </div> 
 
 <% end %>
 
+
+
+
+<!--   <div class="field"> 
+        <%= f.text_field :mountain_name, list: "mountains_autocomplete" %>
+        <datalist id="mountains_autocomplete">
+            <% Mountain.all.each do |mountain| %>
+                <option value="<%= mountain.name %>">
+            <% end %> 
+        </datalist> 
+        <textarea name="climber[mountain_name]"></textarea>
+    </div> 
+-->
