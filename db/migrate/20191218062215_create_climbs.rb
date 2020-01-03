@@ -6,7 +6,7 @@ class CreateClimbs < ActiveRecord::Migration[6.0]
       t.datetime :date_started 
       t.datetime :date_completed
       t.integer :climber_id
-      t.interger :mountain_id
+      t.integer :mountain_id
 
       t.timestamps
     end

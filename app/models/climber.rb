@@ -2,9 +2,9 @@ class Climber < ApplicationRecord
     has_many :climbs 
     has_many :mountains, through: :climbs
 
-    validates :name, :age, :experience,:climb_members presence: true 
+    validates :name, :age, :experience, :climb_members, presence: true 
     validates :name, uniqueness: true  
-    validates :name validates :name, format: { without: /[0-9]/, message: "Only Letters" }
+    validates :name, format: { without: /[0-9]/, message: "Only Letters" }
 
     accepts_nested_attributes_for :mountains
 
@@ -12,7 +12,7 @@ class Climber < ApplicationRecord
         mountain_attribute.values.each do |mountain_attribute|
             if mountain_attribute["name"].present? 
                 mountain = Mountain.find_or_create_by(mountain_attribute)
-                self.mountains <<mountain
+                self.mountains << mountain
             end 
         end 
     end

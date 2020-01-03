@@ -6,7 +6,7 @@
                 Prohibited this Climber from being saved into the database:
             </h2>
 
-            <h2> There were some errors: </h2> 
+            <h2> Following Errors: </h2> 
             <ul>
                 <% @climber.errors.full_messages.each do |message| %>
                     <li> <%= message %> 
@@ -30,37 +30,20 @@
         <%= f.text_field :experience %><br> 
     </div>
 
-        <div class="field">
+    <h4> Completed Mountains </h4> 
+    <div class="field">
         <%= f.collection_check_boxes :mountain_ids, Mountain.all, :id, :name %>
-        <br> 
-        <br> 
-        <%= f.fields_for :mountains, climbers.mountains.build do |mountains_fields| %>
-            <%= mountains_fields :name "Name" %>
+        <%= f.fields_for :mountains, @climber.mountains.build do |mountains_fields| %>
             <%= mountains_fields.text_field :name %>
         <% end %>
-        <br> 
-        <br> 
-
-<!--   <div class="field"> 
-        <%= f.text_field :mountain_name, list: "mountains_autocomplete" %>
-        <datalist id="mountains_autocomplete">
-            <% Mountain.all.each do |mountain| %>
-                <option value="<%= mountain.name %>">
-            <% end %> 
-        </datalist> 
-        <textarea name="climber[mountain_name]"></textarea>
     </div> 
--->
+
+    <h4> Climb Members </h4> 
     <div class="field"> 
         <%= f.collection_check_boxes :climber_id, Climber.all, :id, :name %> 
-        <input name="climber[climber_members][]" id="climber_member_1">
-        <input name="climber[climber_members][]" id="climber_member_2">
-        <input name="climber[climber_members][]" id="climber_member_3">
-        <input name="climber[climber_members][]" id="climber_member_4">
-        <input name="climber[climber_members][]" id="climber_member_5">
-        <input name="climber[climber_members][]" id="climber_member_6">
     </div> 
 
+    <h4> Most Recent Completed Climb </h4> 
     <div class="field"> 
         <%= f.fields_for :climbs do |climb| %>
                 <%= climb.label :name %>
@@ -86,14 +69,3 @@
 
 
 
-
-<!--   <div class="field"> 
-        <%= f.text_field :mountain_name, list: "mountains_autocomplete" %>
-        <datalist id="mountains_autocomplete">
-            <% Mountain.all.each do |mountain| %>
-                <option value="<%= mountain.name %>">
-            <% end %> 
-        </datalist> 
-        <textarea name="climber[mountain_name]"></textarea>
-    </div> 
--->

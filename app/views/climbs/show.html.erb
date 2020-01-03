@@ -6,3 +6,10 @@
 
 <%= link_to 'Edit', edit_climb_path(@climb) %>
 
+<h3> Details </h3> 
+
+    <h3> Mountain: <%= link_to @climb.mountain.name , mountain_path(@climb.mountain) if @climb.mountain %> </h3> 
+    <h3> Climber : <%= link_to @climb.climber.name, climber_path(@climb.climber) if @climb.climber %> </h3> 
+
+
+

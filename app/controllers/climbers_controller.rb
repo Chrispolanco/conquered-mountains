@@ -2,7 +2,7 @@ class ClimbersController < ApplicationController
     before_action :set_climber, only: [:show, :edit, :update]
 
     def index 
-        @Climbers = Climber.all 
+        @climbers = Climber.all 
     end 
 
     def show 
@@ -37,14 +37,14 @@ class ClimbersController < ApplicationController
     private 
 
         def climber_params
-            params.require(:climber).permit(:name, :age, :experience, :mountain_name, members_list: [], climb_attributes: [:name, :duration, :date_started, :date_completed])
+            params.require(:climber).permit(:name, :age, :experience, members_list: [], climb_attributes: [:name, :duration, :date_started, :date_completed], mountain_ids:[], mountains_attributes: [:name])
         end 
 
         def set_climber
             @climber = Climber.find(params[:id])
         end 
     
-    end 
+     
 
 
 end
