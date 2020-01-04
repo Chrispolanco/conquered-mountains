@@ -3,7 +3,7 @@ class ClimbsController < ApplicationController
 
 
     def index 
-        @Climbs = Climb.all 
+        @climbs = Climb.all 
     end 
 
     def show 

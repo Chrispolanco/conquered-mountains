@@ -1,5 +1,5 @@
 class Climb < ApplicationRecord
-    belongs_to :climb
+    belongs_to :climber
     belongs_to :mountain
 
 end

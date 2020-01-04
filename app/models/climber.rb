@@ -9,7 +9,7 @@ class Climber < ApplicationRecord
     accepts_nested_attributes_for :mountains
 
     def mountains_attributes=(mountain_attributes)
-        mountain_attribute.values.each do |mountain_attribute|
+        mountain_attributes.values.each do |mountain_attribute|
             if mountain_attribute["name"].present? 
                 mountain = Mountain.find_or_create_by(mountain_attribute)
                 self.mountains << mountain
