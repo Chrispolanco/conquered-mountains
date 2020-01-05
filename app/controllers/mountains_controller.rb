@@ -1,5 +1,7 @@
 class MountainsController < ApplicationController
     before_action :set_mountain, only: [:show, :edit, :update]
+    before_action :authenticate_user
+    before_action :not_logged_in 
 
     def index 
         @mountains = Mountain.all

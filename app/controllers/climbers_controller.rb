@@ -1,5 +1,7 @@
 class ClimbersController < ApplicationController
     before_action :set_climber, only: [:show, :edit, :update]
+    before_action :authenticate_user
+    before_action :not_logged_in 
 
     def index 
         @climbers = Climber.all 

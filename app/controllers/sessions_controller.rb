@@ -1,21 +1,32 @@
 class SessionsController < ApplicationController
 
+    def home
+        if logged_in? 
+            render 'climbs/index' 
+        else 
+            redirect_to login_path
+        end
+    end 
+
+    def new 
+    end 
+
     def create 
         @user = User.find_by(username: params[:user][:username])
         if @user && @user.authenticate(params[:user][:password])
             session[:user_id] = @user.id 
             redirect_to user_path(@user)
         else
-            fash[:error] = "Login not successful"
+            flash[:error] = "Login not successful"
             redirect_to login_path 
         end 
     end 
 
     def destroy 
-        session.delete(:user_id)
+        session.clear
         redirect_to login_path
     end 
 
-    
+
 
 end
