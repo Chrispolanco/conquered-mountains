@@ -3,4 +3,6 @@ class User < ApplicationRecord
     validates :password_digest, length: {in: 8..20}
     validates :username, :email, uniqueness: true 
     validates :name, format: { without: /[0-9]/, message: "Only Letters" }
+
+    has_secure_password
 end

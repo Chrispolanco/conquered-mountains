@@ -6,6 +6,7 @@ class ClimbsController < ApplicationController
 
     def index 
         @climbs = Climb.all 
+        @climbs = Climb.mountain_name 
     end 
 
     def show 

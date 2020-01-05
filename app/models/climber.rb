@@ -8,6 +8,14 @@ class Climber < ApplicationRecord
 
     accepts_nested_attributes_for :mountains
 
+    def self.age_order 
+        order(:age)
+    end
+    
+    def self.experience_order
+        order(:experience) 
+    end 
+
     def mountains_attributes=(mountain_attributes)
         mountain_attributes.values.each do |mountain_attribute|
             if mountain_attribute["name"].present? 
