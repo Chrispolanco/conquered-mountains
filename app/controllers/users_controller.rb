@@ -31,10 +31,10 @@ class UsersController < ApplicationController
         end 
     end 
 
-    def destory
-        @user.destory
+    def destroy
+        User.find(params[:id]).destroy 
         flash[:notice] = "User Deleted" 
-        redirect_to users_path 
+        redirect_to login_path
     end 
 
     private 
