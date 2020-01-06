@@ -45,7 +45,5 @@ class ClimbersController < ApplicationController
             @climber = Climber.find(params[:id])
         end 
     
-     
-
 
 end

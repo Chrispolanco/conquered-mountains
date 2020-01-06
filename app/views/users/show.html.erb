@@ -12,4 +12,12 @@
     <%= submit_tag "Delete #{@user.name}" %>
 <% end %> 
 
-<% link_to 'Log Out', logout_path %>
+<h4> <%= link_to 'Log Out', logout_path %> </h4> 
+<h3> List of Current Mountains </h3> 
+<h4> <%= link_to 'Mountains', mountains_path %> </h4> 
+<h3> List of Current Cliumbers </h3> 
+<h4> <%= link_to 'Climbers', climbers_path %> </h4> 
+<h3> New Mountains </h3> 
+<h4> <%= link_to 'Mountains', new_mountain_path %> </h4> 
+<h3> New Climbers </h3> 
+<h4> <%= link_to 'Climbers', new_climber_path %> </h4> 

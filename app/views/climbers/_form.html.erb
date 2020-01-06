@@ -1,12 +1,12 @@
 <%= form_for @climber do |f| %> 
     <% if @climber.errors.any? %>
         <div id="error_explanation">
-            <h2>
+            <h6>
                 <%= pluralize(@climber.errors.count, "error") %>
                 Prohibited this Climber from being saved into the database:
-            </h2>
+            </h6>
 
-            <h2> Following Errors: </h2> 
+            <h6> Following Errors: </h6> 
             <ul>
                 <% @climber.errors.full_messages.each do |message| %>
                     <li> <%= message %> 
@@ -33,6 +33,8 @@
     <h4> Completed Mountains </h4> 
     <div class="field">
         <%= f.collection_check_boxes :mountain_ids, Mountain.all, :id, :name %>
+        <br>
+        <p> Manually Enter Mountain </p> 
         <%= f.fields_for :mountains, @climber.mountains.build do |mountains_fields| %>
             <%= mountains_fields.text_field :name %>
         <% end %>
