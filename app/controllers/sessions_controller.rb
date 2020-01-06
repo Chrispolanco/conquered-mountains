@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
     end 
 
     def new 
+        @user = User.new
     end 
 
     def create 
@@ -19,7 +20,6 @@ class SessionsController < ApplicationController
         else
             flash[:error] = "Login not successful"
             redirect_to login_path 
-            
         end 
     end 
 
