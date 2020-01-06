@@ -4,13 +4,15 @@
 
 <%= link_to 'Edit', edit_climber_path(@climber) %>
 
+    <% if @climber.number_mountains > 0 %>    
+<h3>    <%= @climber.name %> "Has Climbed" <%= @climber.number_mountains %> "Mountains" </h3> 
+    <% end %>
 
-<h3> <%= @climber.name %> Has Climbed <%= pluralize(@climber.climbs.mountains.count), 'Mountains' %> </h3> 
-
-
-<h3> Mountains Climbed by Climber </h3>
-    <% climber.climbs.each do |climb| %>
-        <div> <%= link_to climb.mountain.name, mountain_path(climb.mountain)%>
-        </div> 
+    <% if @climber.number_mountains > 0 %>    
+        <h3> Mountains Climbed by Climber </h3>
+            <% @climber.climbs.each do |climb| %>
+                <div> <%= link_to climb.mountain.name, mountain_path(climb.mountain)%>
+                </div> 
+            <% end %>
     <% end %> 
 

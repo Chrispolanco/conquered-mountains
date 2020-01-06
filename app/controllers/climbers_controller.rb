@@ -38,7 +38,7 @@ class ClimbersController < ApplicationController
     private 
 
         def climber_params
-            params.require(:climber).permit(:name, :age, :experience, members_list: [], climb_attributes: [:name, :duration, :date_started, :date_completed], mountain_ids:[], mountains_attributes: [:name])
+            params.require(:climber).permit(:name, :age, :experience, :climber_members, climb_attributes: [:name, :duration, :date_started, :date_completed], mountains_attributes: [:name])
         end 
 
         def set_climber

@@ -8,6 +8,15 @@ class Climber < ApplicationRecord
 
     accepts_nested_attributes_for :mountains
 
+    def number_mountains 
+        list = []
+        climbs.each do |climb|
+            mountain = climb.mountain_name
+            list << mountain 
+        end 
+        list.uniq.count
+    end 
+
     def self.age_order 
         order(:age)
     end
