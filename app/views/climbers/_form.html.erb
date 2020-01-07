@@ -18,7 +18,13 @@
         <%= f.text_field :experience %><br> 
     </div>
 
-    <h4> Completed Mountains </h4> 
+    <p> Climb Members </p> 
+    <div class="field"> 
+        <%= f.collection_check_boxes :id, Climber.all, :id, :name %>
+        <%= f.text_field :climb_members %><br> 
+    </div> 
+
+    <p> Completed Mountains </p> 
     <div class="field">
         <%= f.collection_check_boxes :mountain_ids, Mountain.all, :id, :name %>
         <br>
@@ -28,12 +34,7 @@
         <% end %>
     </div> 
 
-    <h4> Climb Members </h4> 
-    <div class="field"> 
-        <%= f.collection_check_boxes :id, Climber.all, :id, :name %> 
-    </div> 
-
-    <h4> Most Recent Completed Climb </h4> 
+    <p> Most Recent Completed Climb </p> 
     <div class="field"> 
         <%= f.fields_for :climbs do |climb| %>
                 <%= climb.label :name %>

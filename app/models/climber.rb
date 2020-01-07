@@ -2,7 +2,7 @@ class Climber < ApplicationRecord
     has_many :climbs 
     has_many :mountains, through: :climbs
 
-    validates :name, :age, :experience, presence: true 
+    validates :name, presence: true 
     validates :name, uniqueness: true  
     validates :name, format: { without: /[0-9]/, message: "Only Letters" }
 
@@ -35,17 +35,15 @@ class Climber < ApplicationRecord
     end
 
     def climber_members=(names)
-        names.each do |name|
-            if name.present?
-                climber_member = Climber.find_or_create_by(members: name)
+        if name.present?
+            climber_member = Climber.find_or_create_by(members: name)
                 self.climber_members << climber_member
-            end 
         end 
     end 
 
     def climber_members
         members_list = []
-        self.names.map do |name|
+        self.climber_members.map do |name|
             if name.members !=""
                 members_list << name.members
             end 
