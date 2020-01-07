@@ -2,7 +2,7 @@ class Mountain < ApplicationRecord
     has_many :climbs
     has_many :climbers, through: :climbs
 
-    validates :name, :route, :difficulty_rating, presence: true
+    validates :name,  presence: true
     validates :route, uniqueness: true  
     validate :is_name_correct
 

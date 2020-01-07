@@ -16,7 +16,6 @@ ActiveRecord::Schema.define(version: 2019_12_18_062215) do
     t.string "name"
     t.integer "age"
     t.integer "experience"
-    t.string "climb_members"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

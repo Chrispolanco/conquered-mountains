@@ -18,12 +18,6 @@
         <%= f.text_field :experience %><br> 
     </div>
 
-    <p> Climb Members </p> 
-    <div class="field"> 
-        <%= f.collection_check_boxes :id, Climber.all, :id, :name %>
-        <%= f.text_field :climb_members %><br> 
-    </div> 
-
     <p> Completed Mountains </p> 
     <div class="field">
         <%= f.collection_check_boxes :mountain_ids, Mountain.all, :id, :name %>

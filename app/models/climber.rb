@@ -10,8 +10,8 @@ class Climber < ApplicationRecord
 
     def number_mountains 
         list = []
-        climbs.each do |climb|
-            mountain = climb.mountain_name
+        self.climbs.each do |climb|
+            mountain = climb.mountain.name
             list << mountain 
         end 
         list.uniq.count
@@ -34,21 +34,11 @@ class Climber < ApplicationRecord
         end 
     end
 
-    def climber_members=(names)
-        if name.present?
-            climber_member = Climber.find_or_create_by(members: name)
-                self.climber_members << climber_member
-        end 
+    def members=(name)
+        self.climb_members = Climber.find_or_create_by(name: name)
     end 
 
-    def climber_members
-        members_list = []
-        self.climber_members.map do |name|
-            if name.members !=""
-                members_list << name.members
-            end 
-        end 
-        members_list.uniq
+    def members
+        self.climb_members 
     end 
-
 end
