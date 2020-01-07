@@ -1,19 +1,7 @@
 <%= form_for @climber do |f| %> 
-    <% if @climber.errors.any? %>
-        <div id="error_explanation">
-            <h6>
-                <%= pluralize(@climber.errors.count, "error") %>
-                Prohibited this Climber from being saved into the database:
-            </h6>
 
-            <h6> Following Errors: </h6> 
-            <ul>
-                <% @climber.errors.full_messages.each do |message| %>
-                    <li> <%= message %> 
-                <% end %> 
-            </ul> 
-        </div> 
-    <% end %> 
+<%= render partial: 'layouts/errors', locals: {object: @climber}%>
+
 
     <div class="field">
         <%= f.label 'Name' %><br>
