@@ -38,7 +38,7 @@ class MountainsController < ApplicationController
     private 
 
         def mountain_params
-            params.require(:mountain).permit(:name, :route, :difficulty_rating)
+            params.require(:mountain).permit(:name)
         end 
 
         def set_mountain

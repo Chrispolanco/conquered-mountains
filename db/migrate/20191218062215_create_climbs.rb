@@ -3,8 +3,8 @@ class CreateClimbs < ActiveRecord::Migration[6.0]
     create_table :climbs do |t|
       t.string :name 
       t.time :duration 
-      t.datetime :date_started 
-      t.datetime :date_completed
+      t.date :date_started 
+      t.date :date_completed
       t.integer :climber_id
       t.integer :mountain_id
 

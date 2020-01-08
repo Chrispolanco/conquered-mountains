@@ -23,7 +23,7 @@
         <%= f.collection_check_boxes :mountain_ids, Mountain.all, :id, :name %>
         <br>
         <p> Manually Enter Mountain </p> 
-        <%= f.fields_for :mountains, @climber.mountains.build do |mountains_fields| %>
+        <%= f.fields_for :mountains, climber.mountains.build do |mountains_fields| %>
             <%= mountains_fields.text_field :name %>
         <% end %>
     </div> 

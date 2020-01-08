@@ -23,8 +23,8 @@ ActiveRecord::Schema.define(version: 2019_12_18_062215) do
   create_table "climbs", force: :cascade do |t|
     t.string "name"
     t.time "duration"
-    t.datetime "date_started"
-    t.datetime "date_completed"
+    t.date "date_started"
+    t.date "date_completed"
     t.integer "climber_id"
     t.integer "mountain_id"
     t.datetime "created_at", precision: 6, null: false
@@ -33,8 +33,6 @@ ActiveRecord::Schema.define(version: 2019_12_18_062215) do
 
   create_table "mountains", force: :cascade do |t|
     t.string "name"
-    t.string "route"
-    t.string "difficulty_rating"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

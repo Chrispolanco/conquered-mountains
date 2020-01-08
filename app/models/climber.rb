@@ -27,12 +27,11 @@ class Climber < ApplicationRecord
 
     def mountains_attributes=(mountain_attributes)
         mountain_attributes.values.each do |mountain_attribute|
-            if mountain_attribute["name"].present? 
-                mountain = Mountain.find_or_create_by(mountain_attribute)
-                self.mountains << mountain
-            end 
+            mountain = Mountain.find_or_create_by(mountain_attribute)
+            self.mountains << mountain
         end 
-    end
+    end 
+    
 
     def members=(name)
         self.climb_members = Climber.find_or_create_by(name: name)
