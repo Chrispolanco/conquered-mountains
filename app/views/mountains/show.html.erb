@@ -1,17 +1,12 @@
-<h2> <%= @mountain.name %> </h2> 
-<h3> <%= @mountain.route %> </h3> 
-<h4> <%= @mountain.difficulty_rating %> </h4> 
+<h1> <%= @mountain.name %> </h1> 
 
-<%= link_to 'Edit', edit_mountain_path(@mountain) %>
+<h3> Completed By <%= pluralize(@mountain.explorations, 'Climber')%> </h3> 
 
-<h3> <%= @mountain.explorations %>
-Rock Climbing Completions </h3> 
-
-<h3> <%= @mountain.climbers_finished %>
-Have Conquered the Mountain </h3> 
-
-<h3> Climbers to Climb Mountain </h3> 
+<h3> Climbers who have completed Climb </h3> 
     <% @mountain.climbs.each do |climb| %> 
         <div> <%= link_to climb.climber.name, climber_path(climb.climber)%> 
         </div> 
     <% end %> 
+<br> 
+<br> 
+<%= link_to 'Edit', edit_mountain_path(@mountain) %>

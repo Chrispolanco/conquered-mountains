@@ -5,7 +5,7 @@
 <%= link_to 'Edit', edit_climber_path(@climber) %>
 
     <% if @climber.number_mountains > 0 %>    
-<h3>    <%= @climber.name %> "Has Climbed" <%= @climber.number_mountains %> "Mountains" </h3> 
+        <h3><%= @climber.name %> Has Climbed <%= @climber.number_mountains %> Mountains </h3> 
     <% end %>
 
     <% if @climber.number_mountains > 0 %>    

@@ -2,24 +2,16 @@ class Mountain < ApplicationRecord
     has_many :climbs
     has_many :climbers, through: :climbs
 
-    validates :name,  presence: true
-    validates :route, uniqueness: true  
+    validates :name, uniqueness: true  
     validate :is_name_correct
 
 
     before_validation :properly_format
 
     def explorations 
-        self.climbs.each do |climb| 
-            climb.count
-        end 
+        self.climbs.count
     end 
-
-    def climbers_finished 
-        self.climbs.each do |climb|
-            climb.climber.count 
-        end 
-    end 
+    
 
     private 
     
