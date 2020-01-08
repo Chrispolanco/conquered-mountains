@@ -24,12 +24,12 @@
 
     <div class="field"> 
         <%= f.label :mountain %>
-        <%= f.collection_select :mountain, Mountain.all, :id, :name %>
+        <%= f.collection_select :mountain_id, Mountain.all, :id, :name %>
     <div class="field">
 
-        <div class="field"> 
+    <div class="field"> 
         <%= f.label :climber %>
-        <%= f.collection_select :climber, Climber.all, :id, :name %>
+        <%= f.collection_select :climber_id, Climber.all, :id, :name %>
     <div class="field">
 
     <div class="actions">
