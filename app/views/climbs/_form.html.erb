@@ -17,11 +17,6 @@
         <%= f.date_select :date_completed %><br> 
     </div> 
 
-    <div class="field">
-        <%= f.label :duration %>
-        <%= f.time_select :date_started %><br>
-    </div> 
-
     <div class="field"> 
         <%= f.label :mountain %>
         <%= f.collection_select :mountain_id, Mountain.all, :id, :name %>

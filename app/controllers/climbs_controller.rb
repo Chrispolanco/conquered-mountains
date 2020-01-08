@@ -30,7 +30,7 @@ class ClimbsController < ApplicationController
     end 
 
     def update 
-        if @climb && @climb.update(climber_params)
+        if @climb && @climb.update(climb_params)
             redirect_to climb_path(@climb)
         else
             render :edit 
@@ -40,7 +40,7 @@ class ClimbsController < ApplicationController
     private 
 
         def climb_params
-            params.require(:climb).permit(:date_started, :date_completed, :name, :duration, :climber_id, :mountain_id)
+            params.require(:climb).permit(:date_started, :date_completed, :name, :climber_id, :mountain_id)
         end 
 
         def set_climb
