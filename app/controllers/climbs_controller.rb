@@ -13,7 +13,7 @@ class ClimbsController < ApplicationController
     end
 
     def new 
-
+        @climb = Climb.new
     end 
 
     def create

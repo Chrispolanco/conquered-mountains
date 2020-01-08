@@ -4,6 +4,7 @@ class ClimbersController < ApplicationController
 
     def index 
         @climbers = Climber.all 
+        @climbers_sorted_by_age = @climbers.age_order 
     end 
 
     def show 

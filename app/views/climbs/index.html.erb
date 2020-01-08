@@ -1,4 +1,4 @@
 <% @recently_completed.each do |climb| %>
-    <div> <h4> <%= link_to climb.climber.name, climber_path(climb.climber) %> completed  <%= climb.mountain.mountain.name %> </h4> 
+    <div> <h4> <%= link_to climb.climber.name, climber_path(climb.climber) %> completed  <%= climb.mountain.name %> </h4> 
 </div> 
 <% end %>

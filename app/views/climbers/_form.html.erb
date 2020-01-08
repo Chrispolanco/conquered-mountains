@@ -34,18 +34,18 @@
                 <%= climb.label :name %>
                 <%= climb.text_field :name %><br>
 
-                <%= climb.label :duration %>
-                <%= climb.text_field :duration %><br>
-
                 <%= climb.label :date_started %>
-                <%= climb.text_field :date_started %><br>
+                <%= climb.date_select :date_started %><br>
 
                 <%= climb.label :date_completed %>
-                <%= climb.text_field :date_completed %><br>
+                <%= climb.date_select :date_completed %><br>
+
+                <%= climb.label :duration %>
+                <%= climb.time_select :date_started %><br>
         <% end %>
     </div> 
 
-
+    <br> 
     <div class="actions">
         <%= f.submit "Submit Climber" %>
     </div> 
