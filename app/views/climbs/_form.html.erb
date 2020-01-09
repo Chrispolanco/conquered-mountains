@@ -3,17 +3,12 @@
 <%= render partial: 'layouts/errors', locals: {object: @climb}%>
 
     <div class="field">
-        <%= f.label 'Name' %><br>
-        <%= f.text_field :name %><br> 
+        <%= f.label 'Date Started' %><br>
+        <%= f.date_select :climb_start %><br> 
     </div> 
 
     <div class="field">
-        <%= f.label 'Date & Time Started' %><br>
-        <%= f.date_select :date_started %><br> 
-    </div> 
-
-    <div class="field">
-        <%= f.label 'Date & Time Finished' %><br>
+        <%= f.label 'Date Finished' %><br>
         <%= f.date_select :date_completed %><br> 
     </div> 
 

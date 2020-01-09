@@ -21,8 +21,6 @@ ActiveRecord::Schema.define(version: 2019_12_18_062215) do
   end
 
   create_table "climbs", force: :cascade do |t|
-    t.string "name"
-    t.time "duration"
     t.date "date_started"
     t.date "date_completed"
     t.integer "climber_id"

@@ -9,9 +9,9 @@
     <% end %>
 
     <% if @climber.number_mountains > 0 %>    
-        <h3> Mountains Climbed by Climber </h3>
-            <% @climber.climbs.each do |climb| %>
-                <div> <%= link_to climb.mountain.name, mountain_path(climb.mountain)%>
+        <h3> Mountains Climbed by <%= @climber.name %> </h3>
+            <% @climber.mountains.each do |mountain| %>
+                <div> <%= link_to mountain.name, mountain_path(mountain)%>
                 </div> 
             <% end %>
     <% end %> 

@@ -23,23 +23,17 @@
             <%= f.collection_check_boxes :mountain_ids, Mountain.all, :id, :name %>
         <br>
         <%= f.fields_for :mountains, @climber.mountains.build do |mountains_fields| %>
-            <%= mountains_fields.label :name %>
-            <%= mountains_fields.text_field :name %>
+                <%= mountains_fields.text_field :name %>
         <% end %>
     </div> 
 
     <p> Most Recent Completed Climb </p> 
     <div class="field"> 
-        <%= f.fields_for :climbs do |climb| %>
-                <%= climb.label :name %>
-                <%= climb.text_field :name %><br>
+        <%= f.fields_for :climbs do |date| %>
 
-                <%= climb.label :date_started %>
-                <%= climb.date_select :date_started %><br>
-
-                <%= climb.label :date_completed %>
-                <%= climb.date_select :date_completed %><br>
-                
+            <%= date.label :date_started %>
+            <%= date.date_select :date_started, {:include_blank => true, :default => nil} %><br>
+        
         <% end %>
     </div> 
 

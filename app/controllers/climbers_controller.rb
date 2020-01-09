@@ -13,6 +13,7 @@ class ClimbersController < ApplicationController
 
     def new 
         @climber = Climber.new
+        @climber.climbs.build
     end 
 
     def create
@@ -39,7 +40,7 @@ class ClimbersController < ApplicationController
     private 
 
         def climber_params
-            params.require(:climber).permit(:name, :age, :experience, mountain_ids:[], mountains_attributes: [:name],climb_attributes: [:name, :duration, :date_started, :date_completed])
+            params.require(:climber).permit(:name, :age, :experience, mountain_ids:[], mountains_attributes: [:name], climbs_attributes: [:date_started])
         end 
 
         def set_climber

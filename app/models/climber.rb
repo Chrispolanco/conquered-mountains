@@ -7,6 +7,8 @@ class Climber < ApplicationRecord
     validates :name, format: { without: /[0-9]/, message: "Only Letters" }
 
     accepts_nested_attributes_for :mountains
+    accepts_nested_attributes_for :climbs
+
 
     def number_mountains 
         list = []
@@ -23,6 +25,13 @@ class Climber < ApplicationRecord
     
     def self.experience_order
         order(:experience) 
+    end 
+
+    def mountains_attributes=(mountain_attributes) 
+        mountain_attributes.values.each do |mountain_attribute|
+            mountain = Mountain.find_or_create_by(mountain_attribute)
+                self.mountains << mountain
+        end 
     end 
 
     def members=(name)
