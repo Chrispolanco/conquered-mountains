@@ -27,16 +27,6 @@
         <% end %>
     </div> 
 
-    <p> Most Recent Completed Climb </p> 
-    <div class="field"> 
-        <%= f.fields_for :climbs do |date| %>
-
-            <%= date.label :date_started %>
-            <%= date.date_select :date_started, {:include_blank => true, :default => nil} %><br>
-        
-        <% end %>
-    </div> 
-
     <br> 
     <div class="actions">
         <%= f.submit "Submit Climber" %>

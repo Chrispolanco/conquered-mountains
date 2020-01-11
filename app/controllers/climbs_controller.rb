@@ -4,8 +4,8 @@ class ClimbsController < ApplicationController
 
 
     def index 
-        @climbs = Climb.all 
-        @recently_completed = @climbs.recently_conquered 
+        @climbs = Climb.all
+        @recently_completed = @climbs.recently_conquered
     end 
 
     def show 

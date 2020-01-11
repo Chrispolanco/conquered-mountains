@@ -1,5 +1,5 @@
 class Climber < ApplicationRecord
-    has_many :climbs 
+    has_many :climbs
     has_many :mountains, through: :climbs
 
     validates :name, :age, :experience, presence: true 
@@ -7,7 +7,6 @@ class Climber < ApplicationRecord
     validates :name, format: { without: /[0-9]/, message: "Only Letters" }
 
     accepts_nested_attributes_for :mountains
-    accepts_nested_attributes_for :climbs
 
 
     def number_mountains 

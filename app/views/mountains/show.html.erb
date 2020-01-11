@@ -1,11 +1,17 @@
 <h1> <%= @mountain.name %> </h1> 
 
-<h3> Completed By <%= pluralize(@mountain.explorations, 'Climber')%> </h3> 
+<h3> Has Been Conquered <%= pluralize(@mountain.explorations, 'Time')%> </h3> 
 
 <h3> Climbers who have completed Climb </h3> 
     <% @mountain.climbs.each do |climb| %> 
-        <div> <%= link_to climb.climber.name, climber_path(climb.climber)%> 
-        </div> 
+        <% uniq_climbers = []%>
+        <% uniq_climbers << climb.climber%>
+        <% uniq_climbers.uniq.each do |unique_climber| %>
+
+            <div> <%= link_to unique_climber.name, climber_path(unique_climber)%> 
+        </div>
+        <% end %>
+
     <% end %> 
 <br> 
 <br> 

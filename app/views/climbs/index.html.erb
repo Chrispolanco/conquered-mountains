@@ -1,4 +1,23 @@
+<h1> Completed Climbs By Most Recent </h1> 
+
 <% @recently_completed.each do |climb| %>
-    <div> <h4> <%= link_to climb.climber.name, climber_path(climb.climber) %> completed  <%= climb.mountain.name %> </h4> 
+    <div> 
+
+    <h3> <%= link_to climb.climber.name, climber_path(climb.climber) %> 
+    <% if climb.mountain.present? %>
+        Completed <%= climb.mountain.name %>   
+    </h3>
+    <% end %>
+
+    <% if climb.date_started.present? %>
+        <h4> Date Started Climb <h4> 
+        <p><%= climb.date_started %> </p> 
+    <% end %>  
+
+    <% if climb.date_completed.present? %>
+        <h4> Date Completed Climb <h4> 
+        <h5><%= climb.date_completed %> </h5> 
+    <% end %>  
+    <br> 
 </div> 
 <% end %>
