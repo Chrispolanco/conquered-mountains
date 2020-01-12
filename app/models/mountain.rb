@@ -6,6 +6,7 @@ class Mountain < ApplicationRecord
     validate :is_name_correct
 
 
+
     before_validation :properly_format
 
     def explorations 

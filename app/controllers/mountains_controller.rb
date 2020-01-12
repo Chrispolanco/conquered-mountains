@@ -1,9 +1,14 @@
 class MountainsController < ApplicationController
     before_action :set_mountain, only: [:show, :edit, :update]
     before_action :not_logged_in 
+    
 
     def index 
-        @mountains = Mountain.all
+        if params[:climber_id]
+            @mountains = Mountain.find(params[:climber_id])
+        else
+            @mountains = Mountain.all
+        end 
     end 
 
     def show 
@@ -38,7 +43,7 @@ class MountainsController < ApplicationController
     private 
 
         def mountain_params
-            params.require(:mountain).permit(:name)
+            params.require(:mountain).permit(:name, climber_ids:[])
         end 
 
         def set_mountain

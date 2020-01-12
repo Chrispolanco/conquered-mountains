@@ -4,13 +4,8 @@
 
 <h3> Climbers who have completed Climb </h3> 
     <% @mountain.climbs.each do |climb| %> 
-        <% uniq_climbers = []%>
-        <% uniq_climbers << climb.climber%>
-        <% uniq_climbers.uniq.each do |unique_climber| %>
-
-            <div> <%= link_to unique_climber.name, climber_path(unique_climber)%> 
-        </div>
-        <% end %>
+        <div> <%= link_to climb.climber.name, climber_path(climb.climber)%> 
+    </div>
 
     <% end %> 
 <br> 

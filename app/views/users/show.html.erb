@@ -1,12 +1,7 @@
-<h2> <%= @user.name %> </h2> 
-<br> 
-<h4> <%= @user.email %> </h4> 
-<br> 
-<h4> <%= @user.username %> </h4>
-<br> 
-
+<h2> Hello <%= @user.name %> </h2> 
+<p> Username: <%= @user.email %> </p>  
+<p> <%= @user.username %> </p>
 <%= link_to 'Edit', edit_user_path(@user) %>
-
 
 <%= form_tag user_path(@user.id), method: "delete" do %>
     <%= submit_tag "Delete #{@user.name}" %>

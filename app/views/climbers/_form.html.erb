@@ -18,12 +18,12 @@
         <%= f.text_field :experience %><br> 
     </div>
 
-    <p> Last Mountain Climbed </p> 
+    <p> First Mountain Conquered </p> 
     <div class="field">
-            <%= f.collection_check_boxes :mountain_ids, Mountain.all, :id, :name %>
+        <%= f.collection_check_boxes :mountain_ids, Mountain.all, :id, :name %>
         <br>
         <%= f.fields_for :mountains, @climber.mountains.build do |mountains_fields| %>
-                <%= mountains_fields.text_field :name %>
+            <%= mountains_fields.text_field :name %>
         <% end %>
     </div> 
 

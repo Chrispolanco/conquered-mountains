@@ -1,6 +1,7 @@
 class Climb < ApplicationRecord
     belongs_to :climber
     belongs_to :mountain
+
     
     scope :mountain_name, -> (name) {where("name LIKE ?", name)}
 

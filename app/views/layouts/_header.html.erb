@@ -1,8 +1,13 @@
-<% if logged_in? %>
-    <%= link_to "Logout", logout_path %> 
+<footer class="footer">
+      <div class="container">
+              <copyright>
+                  &copy; Twitterdave <%= Time.now.year %>
+              </copyright>
+              <nav>
+                <ul>
 
-
-<% else %>
-    <%= link_to "Sign Up", signup_path %>
-    <%= link_to "Login", login_path %> 
-<% end %>
+                  <li><a href="http://news.railstutorial.org/">News</a></li>
+                </ul>
+              </nav>
+      </div>
+</footer>
