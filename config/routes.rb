@@ -17,6 +17,9 @@ Rails.application.routes.draw do
 
   resources :mountains, only: [:index, :new, :create, :show, :edit, :update] 
   resources :climbs, only: [:index, :new, :create, :show, :edit, :update]
+
+  get 'auth/google_oauth2/callback' => 'sessions#omniauth'
+  get 'auth/failure', to: redirect('/')
  
   
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

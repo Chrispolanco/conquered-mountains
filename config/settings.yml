@@ -1,0 +1,4 @@
+default: &default
+  oauth2:
+    client_id: [1057009076127-ldup4740ls0tt9vcuito43s4b244avv1.apps.googleusercontent.com]
+    client_secret: [9vFfonVl7tCwg5xzY7nDGSaO]

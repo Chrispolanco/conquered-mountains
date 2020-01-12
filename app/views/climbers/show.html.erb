@@ -1,5 +1,9 @@
+<%= render partial: 'layouts/header' %>
+
 <h2> <%= @climber.name %> </h2> 
+
 <p> Age: <%= @climber.age %> </p> 
+<p> First Mountain Conquered By <% @climber.name %> <%= @climber.mountains.first.name %> 
 <p> Years of Experience: <%= @climber.experience %> </p> 
 
 <%= link_to 'Edit', edit_climber_path(@climber) %>

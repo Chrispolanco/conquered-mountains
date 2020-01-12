@@ -28,6 +28,11 @@ class SessionsController < ApplicationController
         redirect_to login_path
     end 
 
-
+    def omniauth
+        @user = User.from_omniauth(auth)
+        @user.save
+        session[:user_id] = @user.id
+        redirect_to user_path(@user)
+    end
 
 end

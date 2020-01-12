@@ -1,3 +1,5 @@
+<%= render partial: 'layouts/header' %>
+
 <h2>    <%= link_to @climb.mountain.name , mountain_path(@climb.mountain) if @climb.mountain %>  climbed by 
         <%= link_to @climb.climber.name, climber_path(@climb.climber) if @climb.climber %>  </h2> 
 
