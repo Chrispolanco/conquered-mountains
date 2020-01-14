@@ -1,12 +1,17 @@
 <%= render partial: 'layouts/header' %>
 
+<% if @climbs.present? %>
+    <% @climbs.each do |climb| %>
+        <% climb.date_started%>
+    <% end %>
+<% end %> 
 
 <% if @recently_completed.present? %>
-
+    <h1> Most Recent Completed Climbs</h1> 
     <% @recently_completed.each do |climb| %>
         <div> 
         <% if climb.date_started.present?%>
-            <h1> Most Recent Completed Climbs</h1> 
+
             <h3> <%= link_to climb.climber.name, climber_path(climb.climber) %> 
                 Completed <%= climb.mountain.name %>   
             </h3>
@@ -27,3 +32,6 @@
     <h2> No Completed Climbs </h2> 
 
 <% end %>
+
+
+<%= link_to "Add Climb with Climber", new_climber_climb_path(@unique_climber)%>

@@ -30,9 +30,18 @@ class SessionsController < ApplicationController
 
     def omniauth
         @user = User.from_omniauth(auth)
-        @user.save
-        session[:user_id] = @user.id
-        redirect_to user_path(@user)
-    end
+        if @user
+            session[:user_id] = @user.id
+            redirect_to user_path(@user)
+        else 
+            flash[:error] = "Login not successful"
+            redirect_to login_path 
+        end 
+    end 
+
+    private 
+        def auth
+            request.env['omniauth.auth']
+        end
 
 end

@@ -4,9 +4,13 @@ class ClimbsController < ApplicationController
     
 
 
-    def index 
-        @climbs = Climb.all
-        @recently_completed = @climbs.recently_conquered
+    def index
+        if params[:climber_id]
+            @unique_climber = Climber.find(params[:climber_id])
+            @climbs = @unique_climber.climbs 
+        else
+            @recently_completed = Climb.recently_conquered
+        end 
     end 
 
     def show 
@@ -14,7 +18,11 @@ class ClimbsController < ApplicationController
     end
 
     def new 
-        @climb = Climb.new
+        if params[:climber_id]
+            @climb = Climb.find(params[:climber_id])
+        else
+            @climb = Climb.new
+        end 
     end 
 
     def create

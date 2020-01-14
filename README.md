@@ -1,24 +1,26 @@
-# README
+Copnquered 
+Conquered Mountains is a Rails web application that allow users to add Climbers, Mountains, and Climbs so other user can see other climbers accomplishments. Being able to see what your friends and those who you look up to have been conquering recently. 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Installation
+Add this line to your application's Gemfile:
 
-Things you may want to cover:
+gem 'conquered_mountains'
+And then execute:
 
-* Ruby version
+$ bundle
+Or install it yourself as:
 
-* System dependencies
+$ gem install conquered_mountains
+Usage
 
-* Configuration
 
-* Database creation
+Development
+After checking out the repo, run bin/setup to install dependencies. You can also run bin/console for an interactive prompt that will allow you to experiment.
 
-* Database initialization
+To install this gem onto your local machine, run bundle exec rake install. To release a new version, update the version number in version.rb, and then run bundle exec rake release, which will create a git tag for the version, push git commits and tags, and push the .gem file to rubygems.org.
 
-* How to run the test suite
+License
+The gem is available as open source under the terms of the MIT License.
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Code of Conduct
+Everyone interacting in the Conquered Mountains project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the code of conduct.

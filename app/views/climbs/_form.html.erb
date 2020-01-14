@@ -19,7 +19,7 @@
 
     <div class="field"> 
         <%= f.label :climber %>
-        <%= f.collection_select :climber_id, Climber.all, :id, :name %>
+        <%= f.hidden_field :climber_id, value: params[:climber_id] %>    
     <div class="field">
 
     <div class="actions">

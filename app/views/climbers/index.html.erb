@@ -4,11 +4,12 @@
  
 <% @climbers_sorted_by_age.each do |climber| %>
     <div> 
-    <%= link_to climber.name, climber_path(climber) %> Age: <%= climber.age %>
+    <%= link_to climber.name, climber_climbs_path(climber) %> Age: <%= climber.age %>
     <br> 
     <%= link_to 'Mountains', climber_mountains_path(climber) %>
     <br> 
     <br> 
     </div> 
 <% end %>
+
 

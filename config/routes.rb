@@ -12,11 +12,16 @@ Rails.application.routes.draw do
   resources :users
 
   resources :climbers, only: [:index, :new, :create, :show, :edit, :update] do 
-    resources :mountains, only: [:index, :new, :create]
+    resources :mountains, only: [:index]
   end 
 
   resources :mountains, only: [:index, :new, :create, :show, :edit, :update] 
   resources :climbs, only: [:index, :new, :create, :show, :edit, :update]
+
+  resources :climbers, only: [:index, :new, :create, :show, :edit, :update] do 
+    resources :climbs, only: [:new, :create, :index]
+  end 
+
 
   get 'auth/google_oauth2/callback' => 'sessions#omniauth'
   get 'auth/failure', to: redirect('/')
