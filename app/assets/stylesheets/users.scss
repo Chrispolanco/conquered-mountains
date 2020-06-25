@@ -1,3 +1,51 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+    background-image: url('./backgrounds/1.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+}
+
+#topLine{
+    color:white; 
+    font-size: 60px;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.field {
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    font-size: 40px;
+    text-align: center;
+    color: rgb(164, 219, 219);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+.actions {
+    margin-top: 20px;
+    text-align: center;
+}
+
+li {
+    display: inline;
+    padding: 8px;
+    font-size: 25px;
+}
+
+a {
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+a:hover {
+    color: black;
+}

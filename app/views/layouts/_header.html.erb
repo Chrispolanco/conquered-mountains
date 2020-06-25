@@ -1,21 +1,18 @@
-​<div class="header"><font size="20">Conquered Mountains</font> </div>
-<div class="content"><font color="green">
-<%= link_to 'Log Out', logout_path %>
-<br>
-<%= link_to ' Current Mountains', mountains_path %>
-<br> 
-<%= link_to 'Current Climbers', climbers_path %>
-<br> 
-<%= link_to 'Current Climbs', climbs_path %>
-<br> 
-<%= link_to 'Add New Mountain', new_mountain_path %>
-<br>
-<%= link_to 'Add New Climbers', new_climber_path %> 
-<br> 
-<%= link_to 'Add New Climbs', new_climb_path %> 
-<br> 
-</font>
-</div>​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
+<nav>
+    <ul>
+        <li><%= link_to 'Log Out', logout_path %></li> 
+        <li><%= link_to ' Current Mountains', mountains_path %></li> 
+        <li><%= link_to 'Current Climbers', climbers_path %></li>
+        <li><%= link_to 'Current Climbs', climbs_path %></li>
+        <li><%= link_to 'Add New Mountain', new_mountain_path %></li>
+        <li><%= link_to 'Add New Climbers', new_climber_path %></li>
+        <li><%= link_to 'Add New Climbs', new_climb_path %></li>
+    <ul> 
+</nav>
+
+<p id=topLine>Conquered Mountains</p> 
+
+
 
 
 
