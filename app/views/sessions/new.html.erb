@@ -1,20 +1,27 @@
-<h1> Login Page </h1> 
+<%= stylesheet_link_tag "users" %>
 
-    <%= flash[:error] %>
-    <%= flash[:notice] %>
+<p id="topLines"> Login Page </p> 
+
+    <p id="textError"><%= flash[:error] %></p>
+    <p id="textError"><%= flash[:notice] %></p>
 
     <%= form_for(:session, url: login_path) do |f|%>
         
-        <%= f.label :username %> 
-        <%= f.text_field :username %> 
+        <div class="field">
+            <%= f.label :username %>
+            <%= f.text_field :username %> 
+        </div>
 
-        <%= f.label :password %>
-        <%= f.password_field :password %>
+        <div class="field">
+            <%= f.label :password %>
+            <%= f.password_field :password %>
+        </div>
 
-        <%= f.submit "Log In" %>
-    <% end %>
+        <div class="actions">
+            <%= f.submit "Log In" %>
+            <% end %>
+        </div>
 
-<br> <br> 
-<h2> <%= link_to "Sign Up", signup_path %> </h2>
+<p id="options"> <%= link_to "Sign Up", signup_path %> </p>
 
-<%= link_to "Sign In With Google", "auth/google_oauth2" %>
+<p id="options"> <%= link_to "Sign In With Google", "auth/google_oauth2" %> </p>

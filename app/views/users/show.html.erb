@@ -1,10 +1,11 @@
+<%= stylesheet_link_tag "users" %>
 <%= render partial: 'layouts/header' %>
 
-<h2> Hello <%= @user.name %> </h2> 
-<p> Username: <%= @user.email %> </p>  
-<p> <%= @user.username %> </p>
-<%= link_to 'Edit', edit_user_path(@user) %>
+<p id="bodysection"> Hello <%= @user.name %> </p> 
+<p id="bodyText"> Username: <%= @user.email %> </p>  
+<p id="bodyText"> <%= @user.username %> </p>
+<p id="bodyText"><%= link_to 'Edit', edit_user_path(@user) %>
 
-<%= form_tag user_path(@user.id), method: "delete" do %>
-    <%= submit_tag "Delete #{@user.name}" %>
+<div class="actions" id="options"><%= form_tag user_path(@user.id), method: "delete" do %>
+    <%= submit_tag "Delete #{@user.name}" %></div>
 <% end %> 

@@ -1,7 +1,9 @@
 <%= render partial: 'layouts/header' %>
 
-<h1> Editing <%= @user.name %> </h1> 
+<p id=topLines> Edit Account</p> 
+
+<p id="bodysection"> <%= @user.name %> </p> 
 
 <%= render 'form' %> 
 
-<%= link_to "Cancel Editing", @user %> 
+<p id="options" ><%= link_to "Cancel Editing", @user %> </p>
