@@ -13,10 +13,6 @@ class ClimbsController < ApplicationController
         end 
     end 
 
-    def show 
-
-    end
-
     def new 
         if params[:climber_id]
             @climb = Climb.find(params[:climber_id])
@@ -32,10 +28,6 @@ class ClimbsController < ApplicationController
         else 
             render :new 
         end 
-    end 
-
-    def edit 
-    
     end 
 
     def update 

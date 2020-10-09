@@ -7,10 +7,6 @@ class ClimbersController < ApplicationController
         @climbers_sorted_by_age = @climbers.age_order 
     end 
 
-    def show 
-
-    end
-
     def new 
         @climber = Climber.new
     end 
@@ -22,10 +18,6 @@ class ClimbersController < ApplicationController
         else 
             render :new
         end 
-    end 
-
-    def edit 
-    
     end 
 
     def update 

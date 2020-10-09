@@ -11,10 +11,6 @@ class MountainsController < ApplicationController
         end 
     end 
 
-    def show 
-
-    end
-
     def new 
         @mountain = Mountain.new
     end 
