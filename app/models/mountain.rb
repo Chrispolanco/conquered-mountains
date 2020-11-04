@@ -5,8 +5,6 @@ class Mountain < ApplicationRecord
     validates :name, uniqueness: true  
     validate :is_name_correct
 
-
-
     before_validation :properly_format
 
     def explorations 
