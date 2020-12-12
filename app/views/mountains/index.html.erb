@@ -1,12 +1,10 @@
 <%= stylesheet_link_tag "mountains" %>
 <%= render partial: 'layouts/header' %>
 
-<h1> Mountains </h1> 
+<div class = "list"> Mountains </div> 
 <% if @mountains[0].present?%>
     <% @mountains.each do |mountain| %> 
-        <div>
-        <h2> <%= link_to mountain.name, mountain_path(mountain) %> </h2> 
-        </div> 
+        <div class = "list"> <%= link_to mountain.name, mountain_path(mountain) %> </div> 
     <% end %> 
     <% else %>
         <%= link_to @mountains.name, mountain_path(@mountains) %>
